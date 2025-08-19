@@ -1,3 +1,66 @@
+// // src/components/Skills/Skills.jsx
+// import React from "react";
+// import { SkillsInfo } from "../../constants";
+// import Tilt from "react-parallax-tilt";
+
+// const Skills = () => (
+//   <section
+//     id="skills"
+//     className="py-20 px-6 md:px-16 lg:px-24 font-sans bg-gradient-to-br from-[#0e0e1a] to-[#1b1b2b] text-white"
+//   >
+//     {/* Section Header */}
+//     <div className="text-center mb-14">
+//       <h2 className="text-3xl sm:text-4xl font-bold tracking-wide uppercase">
+//         Skills
+//       </h2>
+//       <div className="w-14 h-1 bg-[#8245ec] mx-auto mt-3 rounded-full" />
+//       <p className="text-gray-400 mt-3 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+//         Tools and technologies I’ve used across various projects and roles.
+//       </p>
+//     </div>
+
+//     {/* Skill Categories */}
+//     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+//       {SkillsInfo.map((category) => (
+//         <Tilt
+//           key={category.title}
+//           tiltMaxAngleX={6}
+//           tiltMaxAngleY={6}
+//           scale={1.01}
+//           transitionSpeed={600}
+//           gyroscope={true}
+//         >
+//           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-md hover:shadow-[#8245ec]/20 transition-all">
+//             <h3 className="text-lg font-medium text-center text-gray-300 mb-5 uppercase tracking-wide">
+//               {category.title}
+//             </h3>
+//             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+//               {category.skills.map((skill) => (
+//                 <div
+//                   key={skill.name}
+//                   className="flex flex-col items-center justify-center p-3 bg-white/10 border border-white/10 rounded-lg hover:scale-105 transition-transform"
+//                 >
+//                   <img
+//                     src={skill.logo}
+//                     alt={skill.name}
+//                     className="w-6 h-6 mb-1 object-contain"
+//                   />
+//                   <span className="text-xs text-gray-200 text-center">
+//                     {skill.name}
+//                   </span>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </Tilt>
+//       ))}
+//     </div>
+//   </section>
+// );
+
+// export default Skills;
+
+
 // src/components/Skills/Skills.jsx
 import React from "react";
 import { SkillsInfo } from "../../constants";
@@ -8,56 +71,52 @@ const Skills = () => (
     id="skills"
     className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
   >
-    {/* Section Title */}
-    <div className="text-center mb-8">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white">SKILLS</h2>
-      <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
-      <p className="text-gray-400 mt-4 text-lg font-semibold">
-      A collection of my technical skills and expertise honed through various projects and experiences
-      </p>
-    </div>
+    {/* Section Header */}
+   <div className="text-center mb-14">
+  <h2 className="text-3xl sm:text-4xl font-bold tracking-wide uppercase text-white">
+    Skills
+  </h2>
+  <div className="w-14 h-1 bg-[#8245ec] mx-auto mt-3 rounded-full" />
+  <p className="text-gray-200 mt-3 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+    Tools and technologies I’ve used across various projects and roles.
+  </p>
+</div>
+
 
     {/* Skill Categories */}
-    <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
       {SkillsInfo.map((category) => (
-        <div
+        <Tilt
           key={category.title}
-          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white 
-          shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
+          tiltMaxAngleX={6}
+          tiltMaxAngleY={6}
+          scale={1.01}
+          transitionSpeed={600}
+          gyroscope={true}
         >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
-            {category.title}
-          </h3>
-
-          {/* Skill Items - 3 per row on larger screens */}
-          <Tilt
-            key={category.title}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-md hover:shadow-[#8245ec]/20 transition-all">
+            <h3 className="text-lg font-medium text-center text-gray-300 mb-5 uppercase tracking-wide">
+              {category.title}
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {category.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 text-center"
+                  className="flex flex-col items-center justify-center p-3 bg-white/10 border border-white/10 rounded-lg hover:scale-105 transition-transform"
                 >
                   <img
                     src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
+                    alt={skill.name}
+                    className="w-6 h-6 mb-1 object-contain"
                   />
-                  <span className="text-xs sm:text-sm text-gray-300">
+                  <span className="text-xs text-gray-200 text-center">
                     {skill.name}
                   </span>
                 </div>
               ))}
             </div>
-          </Tilt>
-        </div>
+          </div>
+        </Tilt>
       ))}
     </div>
   </section>
